@@ -1,15 +1,11 @@
 # ChromeRemoteObject
 This library allows to use JavaScript objects as native objects and adds an 'eval' method to [Chrome.ahk](https://github.com/G33kDude/Chrome.ahk)
 
-`result := Chrome.Page.eval(expr)`
+`result := page.eval(expr)`
 
 #### Example
 ```ahk
-if (chromes := Chrome.findInstances())
-    browser := {base:Chrome, debugPort:chromes.minIndex()}
-else
-    browser := new Chrome(a_desktop "\ChromeProfile")
-
+browser := new Chrome(a_scriptDir "\ChromeProfile")
 page := browser.getPage()
 
 doc := page.eval("document")
